@@ -23,8 +23,8 @@ In this project I attempt to model the traffic-density for the City of Vienna so
 </ul>
 </ul>
 
-###  _
-## PART 1: Simulating Paths
+###   
+## PART 1 - Simulating Paths
 <b>Road-Network:</b> The official road network consists of ~30000 street segments. Each respective geolocation, node-connectivity, as well as street-type are provided.
 <p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/network-by-type.png" width="700"></p>
 
@@ -34,7 +34,7 @@ In this project I attempt to model the traffic-density for the City of Vienna so
 <b>Shortest-Path:</b> After successfully mapping area information, the shortest path between any pair of nodes/areas can be obtained. The networkx library provides the algorithm the calcuate this optimal path based on meter-distance or max. speed limits per street.
 <p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/path-areas.png" width="700"></p>
 
-## PART 2: Constrained Optimization
+## PART 2 - Constrained Optimization
 <b>Estimating Coefficients:</b> By multiplying traveled-distance per area with a area-specific parameter, the actual Uber-travel-time can be fitted by a function. The parameters are thereby constrained to sensbile values that translate to range between 5 - 120 km/h.
 <p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/coefs-distribution-allday.gif" width="700"></p>
 
