@@ -19,15 +19,18 @@ In this project I attempt to model the traffic-density for the City of Vienna so
 <ul>
     <li>Frame a constrained optimiziation problem to derive a "traffic-coefficient" per each area, representing its traffic-density</li>
     <li>Analyze traffic-density per area during different times of the day</li>
+</ul>
     
-### A2. Project Structure
-The script can be executed via "main.ipynb" and thereby calls custom modules:
-- yieldcurves.py --> Cleaning of raw input put from source
-- principalcomponents.py --> Object class that conducts all transformations of PCs
-- autoregressive.py --> Object class fits a time series model and returns predictions, based on a simple autoregressive-process
-   
-### Road-Network
+### Project Structure
+Recalculation of all results can be executed by running "calc-paths.ipynb" to simluate all path information. After that, "optimize.ipynb" can be executed to fit optimal coefficients for each area. Following custom modules are called in the background:
+- data_streets.py --> 
+- data_areas.py -->
+- data_uber.py
+- street_network.py -->
 
+  
+### Road-Network
+The official road network consists of ~30000 street segments. Each respective geolocation, node-connectivity, as well as street-type are provided.
 <p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/network-by-type.png"></p>
 
 ### Areas
