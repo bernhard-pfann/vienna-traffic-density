@@ -7,7 +7,8 @@ In this project I attempt to model the traffic-density for the City of Vienna so
 - <b>Uber rides:</b> Information on Uber rides per City can be accessed at (https://movement.uber.com/). Uber is splitting the City of Vienna into 1370 subdistricts where travel-time between these starting & ending-areas is reported. Additional categorical information about weekdays or time of the day are available.
 
 ### Approach
-<b>Part 1: Simulating Paths</b>
+<ul>
+<li>Part 1: Simulating Paths</li>
 <ul>
     <li>Initialize a network graph consisting of all recorded streets of the City of Vienna</li>
     <li>Map maximum speed-limit to each network edge dependent on its street-type</li>
@@ -15,10 +16,11 @@ In this project I attempt to model the traffic-density for the City of Vienna so
     <li>Collect shortest path information for every start/end combination observed in the set of Uber rides</li>
 </ul>
 
-<b>Part 2: Constrained Optimization</b>
+<li>Part 2: Constrained Optimization</li>
 <ul>
     <li>Frame a constrained optimiziation problem to estimate a "traffic-coefficient" per each area, representing its traffic-density</li>
     <li>Analyze traffic-density per area during different times of the day</li>
+</ul>
 </ul>
 
 
@@ -39,10 +41,7 @@ After successfully mapping area information, the shortest path between any pair 
 ### Estimating Coefficients
 By multiplying traveled-distance per area with a area-specific parameter, the actual Uber-travel-time can be fitted by a function. The parameters are thereby constrained to sensbile values that translate to range between 5 - 120 km/h.
 <p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/coefs-distribution-allday.gif" width="700"></p>
-<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/coefs-map-allday.png" width="700"></p>
 
 ### Scenario Analysis
 A delta-analysis can be performed by fitting the model only on Uber rides filtered for a specific time of the day or weekday. A higher traffic density during afternoon rush-hour in specific areas is thereby made visible.
 <p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/coefs-map-diff.png" width="700"></p>
-
-
