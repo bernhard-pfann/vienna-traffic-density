@@ -1,6 +1,5 @@
 # MODELING TRAFFIC-DENSTIY OF THE CITY OF VIENNA
 
-## Executive Summary
 In this project I attempt to model the traffic-density for the City of Vienna solely based on publicly available data.<br><br>
 
 ### Data Sources
@@ -21,13 +20,6 @@ In this project I attempt to model the traffic-density for the City of Vienna so
     <li>Frame a constrained optimiziation problem to estimate a "traffic-coefficient" per each area, representing its traffic-density</li>
     <li>Analyze traffic-density per area during different times of the day</li>
 </ul>
-    
-### Project Structure
-Recalculation of all results can be executed by running "calc-paths.ipynb" to simluate all path information. After that, "optimize.ipynb" can be executed to fit optimal coefficients for each area. Following custom modules are called in the background:
-- data_streets.py --> 
-- data_areas.py -->
-- data_uber.py
-- street_network.py -->
 
 
 ## PART 1: Simulating Paths
