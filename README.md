@@ -20,11 +20,13 @@ In this project I attempt to model the traffic-density for the City of Vienna so
 <ul>
     <li>Frame a constrained optimiziation problem to estimate a "traffic-coefficient" per each area, representing its traffic-density</li>
     <li>Analyze traffic-density per area during different times of the day</li>
+
+
 </ul>
 </ul>
 
 
-## PART 1 - Simulating Paths
+## PART 1: Simulating Paths
 ### Road-Network
 The official road network consists of ~30000 street segments. Each respective geolocation, node-connectivity, as well as street-type are provided.
 <p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/network-by-type.png" width="700"></p>
