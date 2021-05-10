@@ -32,17 +32,17 @@ Recalculation of all results can be executed by running "calc-paths.ipynb" to si
 ## PART 1: Simulation Paths
 ### Road-Network
 The official road network consists of ~30000 street segments. Each respective geolocation, node-connectivity, as well as street-type are provided.
-<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/network-by-type.png width="500"></p>
+<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/network-by-type.png" width="500"></p>
 
 ### Areas
-<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/shapes.png width="500""></p>
+<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/shapes.png" width="500""></p>
 
 ### Shortest-Path
-<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/path-areas.png width="500""></p>
+<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/path-areas.png" width="500""></p>
 
 ## PART 2
 ### Constrained Optimization
-<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/coefs-distribution-allday.gif width="500""></p>
+<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/coefs-distribution-allday.gif" width="500""></p>
 
 ### Scenario Analysis
-<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/coefs-distribution-scenarios.png width="500""></p>
+<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/coefs-distribution-scenarios.png" width="500""></p>
