@@ -35,14 +35,14 @@ The official road network consists of ~30000 street segments. Each respective ge
 <p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/network-by-type.png" width="500"></p>
 
 ### Areas
-<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/shapes.png" width="500""></p>
+<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/shapes.png" width="800"></p>
 
 ### Shortest-Path
-<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/path-areas.png" width="500""></p>
+<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/path-areas.png" width="800"></p>
 
 ## PART 2
 ### Constrained Optimization
-<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/coefs-distribution-allday.gif" width="500""></p>
+<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/coefs-distribution-allday.gif" width="800"></p>
 
 ### Scenario Analysis
-<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/coefs-distribution-scenarios.png" width="500""></p>
+<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/coefs-distribution-scenarios.png" width="800"></p>
