@@ -25,8 +25,7 @@ In this project I attempt to model the traffic-density for the City of Vienna so
 
 ###
 ### PART 1: Simulating Paths
-#### Road-Network
-The official road network consists of ~30000 street segments. Each respective geolocation, node-connectivity, as well as street-type are provided.
+<b>Road-Network:</b> The official road network consists of ~30000 street segments. Each respective geolocation, node-connectivity, as well as street-type are provided.
 <p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/network-by-type.png" width="700"></p>
 
 #### Areas
