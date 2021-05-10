@@ -28,16 +28,20 @@ Recalculation of all results can be executed by running "calc-paths.ipynb" to si
 - data_uber.py
 - street_network.py -->
 
-  
+## PART 1
 ### Road-Network
 The official road network consists of ~30000 street segments. Each respective geolocation, node-connectivity, as well as street-type are provided.
 <p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/network-by-type.png"></p>
 
 ### Areas
-The Uber defined areas
+<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/shapes.png"></p>
 
 ### Shortest-Path
+<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/path-areas.png"></p>
 
+## PART 2
 ### Constrained Optimization
+<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/coefs-distribution-allday.png"></p>
 
 ### Scenario Analysis
+<p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/coefs-distribution-scenarios.png"></p>
