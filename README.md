@@ -28,7 +28,7 @@ Recalculation of all results can be executed by running "calc-paths.ipynb" to si
 - data_uber.py
 - street_network.py -->
 
-<br>
+
 ## PART 1: Simulating Paths
 ### Road-Network
 The official road network consists of ~30000 street segments. Each respective geolocation, node-connectivity, as well as street-type are provided.
