@@ -8,7 +8,7 @@ In this project I attempt to model the traffic-density for the City of Vienna so
 
 ### Approach
 <ul>
-<li>Part 1: Simulating Paths</li>
+    <li><b>Part 1 - Simulating Paths</b></li>
 <ul>
     <li>Initialize a network graph consisting of all recorded streets of the City of Vienna</li>
     <li>Map maximum speed-limit to each network edge dependent on its street-type</li>
@@ -16,7 +16,7 @@ In this project I attempt to model the traffic-density for the City of Vienna so
     <li>Collect shortest path information for every start/end combination observed in the set of Uber rides</li>
 </ul>
 
-<li>Part 2: Constrained Optimization</li>
+<li><b>Part 2 - Constrained Optimization</b></li>
 <ul>
     <li>Frame a constrained optimiziation problem to estimate a "traffic-coefficient" per each area, representing its traffic-density</li>
     <li>Analyze traffic-density per area during different times of the day</li>
@@ -24,7 +24,7 @@ In this project I attempt to model the traffic-density for the City of Vienna so
 </ul>
 
 
-## PART 1: Simulating Paths
+## PART 1 - Simulating Paths
 ### Road-Network
 The official road network consists of ~30000 street segments. Each respective geolocation, node-connectivity, as well as street-type are provided.
 <p align="center"> <img src="https://github.com/bernhard-pfann/vienna-traffic-density/blob/main/img/network-by-type.png" width="700"></p>
