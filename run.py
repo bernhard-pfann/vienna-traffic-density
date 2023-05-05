@@ -13,7 +13,7 @@ from src.uber_areas import UberAreas
 from src.uber_rides import UberRides
 from src.optimize import optimizer
 
-def main():
+def main2():
 
     filepath = os.path.join(conf.root_output, "coefs.csv")
 
@@ -21,7 +21,7 @@ def main():
     coefs.to_csv(filepath, sep=",", index=True)
     print("LOL")
 
-def main2():
+def main():
 
     # Argument parser for number of iterations
     parser = argparse.ArgumentParser()
@@ -91,13 +91,11 @@ def main2():
 def export(X: pd.DataFrame, y: pd.DataFrame, meta: pd.DataFrame) -> None:
     """Write files to output location for further analysis."""
 
-    X_path    = os.path.join(conf.root_output, "X.csv")
-    y_path    = os.path.join(conf.root_output, "y.csv")
-    # meta_path = os.path.join(conf.root_output, "meta.csv")
+    X_path    = os.path.join(conf.root_output, "csv", "X.csv")
+    y_path    = os.path.join(conf.root_output, "csv", "y.csv")
 
     X.to_csv(X_path, sep=",", index=False)
     y.to_csv(y_path, sep=",", index=False)
-    # meta.to_csv(meta_path, sep=",", index=False)
     print("Files written to {}".format(conf.root_output))
 
 

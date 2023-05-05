@@ -4,7 +4,7 @@ import networkx as nx
 import numpy as np
 import pandas as pd
 
-from src.utils import get_colors
+from src.utils import get_colors, write_to_pickle
 
 
 class Network:
@@ -47,6 +47,7 @@ class Network:
 
         # Standard color for all edges
         self.color_init()
+        write_to_pickle(self, "network.pkl")
 
     def get_disconnected_nodes(self) -> None:
         """Identifies nodes that are not part of the main connected network."""

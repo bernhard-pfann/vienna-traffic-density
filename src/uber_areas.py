@@ -4,9 +4,9 @@ from typing import Dict, List, Tuple
 
 import networkx as nx
 import pandas as pd
-import pickle
 
-import params.config as conf
+from src.utils import write_to_pickle
+
 
 class UberAreas:
     """A class used to represent the sub-districts Uber has split the city into.
@@ -21,7 +21,7 @@ class UberAreas:
     def __init__(self, filepath: str, graph: nx.Graph) -> None:
         self.load_data(filepath)
         self.load_graph(graph)
-        self.write_to_pickle()
+        write_to_pickle(self, "areas.pkl")
         
     def load_data(self, filepath: str) -> pd.DataFrame:
         """Loads information from a JSON file into a DataFrame."""
@@ -65,9 +65,5 @@ class UberAreas:
             graph.add_edge(
                 u_of_edge=area_id+"-"+str(len(nodes)-1), 
                 v_of_edge=area_id+"-"+str(0))
-
-    def write_to_pickle(self):
-        """Save object as pickle in output location."""
- 
-        with open(os.path.join(conf.root_output, "areas.pickle"), "wb") as f:
-            pickle.dump(self, f)
+            
+        self.graph = graph

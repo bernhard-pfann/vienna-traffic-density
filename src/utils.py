@@ -6,6 +6,7 @@ import networkx as nx
 import seaborn as sns
 from matplotlib.cm import register_cmap
 from matplotlib.colors import LinearSegmentedColormap
+import pickle
 
 import params.config as conf
 
@@ -34,13 +35,13 @@ def plot_graph(
     filename: str
 ) -> None:
 
-    plt.figure(figsize=(15,12))
+    plt.figure(figsize=(12, 10))
     nx.draw(
         G,
         pos=pos, 
         with_labels=False,
         edge_color=colors,
-        width=0.5,
+        width=0.3,
         node_color="gray",
         node_size=0
     )
@@ -54,3 +55,10 @@ def coef_kmh(coefs):
     mps = 1/coefs
     kmh = mps/1000*3600
     return kmh
+
+
+def write_to_pickle(obj, fname):
+    """Save object as pickle in output location."""
+
+    with open(os.path.join(conf.root_output, "pkl", fname), "wb") as f:
+        pickle.dump(obj, f)

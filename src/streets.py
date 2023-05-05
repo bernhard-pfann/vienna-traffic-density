@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 from matplotlib import path
 
+from src.utils import write_to_pickle
 
 class Streets:
     """
@@ -22,6 +23,7 @@ class Streets:
         
         self.drop_single_nodes()
         self.add_areas(polygons)
+        write_to_pickle(self, "streets.pkl")
 
     def load_edges(self, filepath: str) -> pd.DataFrame:
         """
