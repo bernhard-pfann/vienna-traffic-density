@@ -16,6 +16,11 @@ input_paths = {
     "areas": os.path.join(root_input, "vienna_statistical_areas.json"),
     "rides": os.path.join(root_input, "vienna-statistical_areas-2020-1-All-DatesByHourBucketsAggregate.csv")
 }
+output_paths = {
+    "X":     os.path.join(root_output, "csv", "X.csv"),
+    "y":     os.path.join(root_output, "csv", "y.csv"),
+    "coefs": os.path.join(root_output, "csv", "coefs.csv")
+}
 
 ##################
 # Download paths #
