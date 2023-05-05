@@ -1,9 +1,6 @@
 import os
 
 
-target = "mean_travel_time"
-
-
 ###############
 # Local paths #
 ###############
@@ -19,7 +16,6 @@ input_paths = {
     "areas": os.path.join(root_input, "vienna_statistical_areas.json"),
     "rides": os.path.join(root_input, "vienna-statistical_areas-2020-1-All-DatesByHourBucketsAggregate.csv")
 }
-
 
 ##################
 # Download paths #
@@ -42,3 +38,14 @@ uber_url_params = {
     "sa;": "",
     "sdn": "",
 }
+
+############
+# Optimize #
+############
+
+target = "mean_travel_time"
+outer_areas = ["1365", "1366", "1367", "1368", "1369", "1370"]
+
+coef_mu = 0.3
+coef_sigma = 0.1
+coef_bounds = (0.03, 0.72)

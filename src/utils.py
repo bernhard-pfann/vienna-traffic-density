@@ -26,6 +26,7 @@ def get_colors(n: int) -> None:
     if n: cmap = sns.color_palette(palette="vienna-roads", n_colors=n, desat=1)
     return cmap
 
+
 def plot_graph(
     G: nx.Graph, 
     pos: Dict[int, Tuple[float, float]], 
@@ -45,3 +46,11 @@ def plot_graph(
     )
     filepath = os.path.join(conf.root_img, filename)
     plt.savefig(filepath, dpi=600)
+
+
+def coef_kmh(coefs):
+    """A function that converts coefficients from s/m into km/h."""
+    
+    mps = 1/coefs
+    kmh = mps/1000*3600
+    return kmh

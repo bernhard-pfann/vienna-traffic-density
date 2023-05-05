@@ -11,9 +11,17 @@ from src.paths import NetworkPath
 from src.streets import Streets
 from src.uber_areas import UberAreas
 from src.uber_rides import UberRides
-
+from src.optimize import optimizer
 
 def main():
+
+    filepath = os.path.join(conf.root_output, "coefs.csv")
+
+    coefs = optimizer()
+    coefs.to_csv(filepath, sep=",", index=True)
+    print("LOL")
+
+def main2():
 
     # Argument parser for number of iterations
     parser = argparse.ArgumentParser()
@@ -85,11 +93,11 @@ def export(X: pd.DataFrame, y: pd.DataFrame, meta: pd.DataFrame) -> None:
 
     X_path    = os.path.join(conf.root_output, "X.csv")
     y_path    = os.path.join(conf.root_output, "y.csv")
-    meta_path = os.path.join(conf.root_output, "meta.csv")
+    # meta_path = os.path.join(conf.root_output, "meta.csv")
 
     X.to_csv(X_path, sep=",", index=False)
     y.to_csv(y_path, sep=",", index=False)
-    meta.to_csv(meta_path, sep=",", index=False)
+    # meta.to_csv(meta_path, sep=",", index=False)
     print("Files written to {}".format(conf.root_output))
 
 
