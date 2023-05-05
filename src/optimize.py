@@ -1,3 +1,4 @@
+from typing import Tuple
 import os
 
 import numpy as np
@@ -8,9 +9,16 @@ from sklearn.model_selection import train_test_split
 import params.config as conf
 
 
-def train_test():
-    """Comment this."""
+def train_test() -> Tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]:
+    """Load and split data into train and test sets.
 
+    Returns:
+        Tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]: A tuple containing four objects:
+            1. A DataFrame containing the feature matrix for the training set.
+            2. A DataFrame containing the feature matrix for the test set.
+            3. A Series containing the target variable for the training set.
+            4. A Series containing the target variable for the test set.
+    """
     X = pd.read_csv(os.path.join(conf.root_output, "csv", "X.csv"))
     y = pd.read_csv(os.path.join(conf.root_output, "csv", "y.csv")).squeeze()
 
@@ -20,9 +28,12 @@ def train_test():
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=5)
     return X_train, X_test, y_train, y_test
 
-def optimizer():
-    """Minimize."""
+def optimizer() -> pd.DataFrame:
+    """Optimize the model's coefficients using the training set and return the results.
 
+    Returns:
+        pd.DataFrame: A DataFrame containing the optimal coefficients for each feature.
+    """
     global iteration, coefs_all
 
     X_train, X_test, y_train, y_test = train_test()
@@ -69,19 +80,28 @@ def optimizer():
 
     return coefs_df
 
+def loss_func(coefs: np.ndarray, X: pd.DataFrame, y: pd.Series, n: int) -> float:
+    """Calculate the residual squared error based on a set of coefficients.
 
-def loss_func(coefs, X, y, n):
-    """A function that returns the residual squared error, based on a set of coefs."""
-    
+    Args:
+        coefs (np.ndarray): A numpy array of coefficients.
+        X (pd.DataFrame): A pandas DataFrame containing the feature matrix.
+        y (pd.Series): A pandas Series
+    """
     est  = np.dot(X, coefs)
     err  = np.sum(np.power(est - y, 2))
     rmse = np.sqrt(err/n)
     return rmse
 
+def callback_func(coefs_i: np.ndarray, X: pd.DataFrame, y: pd.Series, n: int) -> None:
+    """A function that prints the residual squared error at each iteration.
 
-def callback_func(coefs_i, X, y, n):
-    """A function that prints runtime at each iteration"""
-    
+    Args:
+        coefs_i (np.ndarray): A numpy array of coefficients.
+        X (pd.DataFrame): A pandas DataFrame containing the feature matrix.
+        y (pd.Series): A pandas Series containing the target variable.
+        n (int): The number of observations in the dataset.
+    """
     global iteration, coefs_all
     
     iteration += 1

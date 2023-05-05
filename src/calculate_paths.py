@@ -1,18 +1,29 @@
+from typing import Tuple
+
 import pandas as pd
 import networkx as nx
 from tqdm import tqdm
 
 import params.config as conf
 from src.network import Network
-from src.paths import NetworkPath
+from src.network_paths import NetworkPath
 from src.streets import Streets
 from src.uber_areas import UberAreas
 from src.uber_rides import UberRides
 
 
-def pathfinder(n_iter: int):
-    """Comment this."""
+def pathfinder(n_iter: int) -> Tuple[pd.DataFrame, pd.Series]:
+    """Calculate shortest paths between Uber areas based on travel time.
 
+    Args:
+        n_iter (int): The number of iterations to perform.
+
+    Returns:
+        Tuple[pd.DataFrame, pd.Series]: A tuple containing two objects:
+            1. A pandas DataFrame containing the travel times between each pair of Uber areas,
+            indexed by the area IDs.
+            2. A pandas Series containing the target variable for the first n_iter Uber rides.
+    """
     # Areas defined by Uber
     areas = UberAreas(
         filepath=conf.input_paths["areas"], 
