@@ -62,7 +62,7 @@ class Network:
         self.disconnected_edges = list(self.G.edges(self.disconnected_nodes))
 
     def drop_disconnected(self) -> None:
-        """Drop all disconnected edges and nodes to retain a fully connected network."""
+        """Drop all disconnected edges and nodes that are not part of the main network."""
 
         for i in self.disconnected_edges:
             self.G.remove_edge(i[0], i[1])

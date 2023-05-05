@@ -110,6 +110,5 @@ class UberRides:
             print("Uber data cannot be found at {}.".format(path))
             print("Please download .csv file at {}.".format(url))
             sys.exit()
-
         else:
-            print("Data already downloaded and in expected location.")
+            pass

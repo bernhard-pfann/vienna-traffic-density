@@ -1,4 +1,4 @@
-from typing import Dict, Optional, Tuple
+from typing import Dict, Optional, Tuple, List
 
 import numpy as np
 import pandas as pd
@@ -20,7 +20,7 @@ class Streets:
         self.nodes = self.load_nodes(filepaths["nodes"])
         self.pos = self.get_pos()
         
-        self.drop_nodes()
+        self.drop_single_nodes()
         self.add_areas(polygons)
 
     def load_edges(self, filepath: str) -> pd.DataFrame:
@@ -120,7 +120,8 @@ class Streets:
 
         return pos
             
-    def drop_nodes(self):
+    # TODO: Probably not needed anymore
+    def drop_single_nodes(self):
         """A function that drops nodes, which are not connected to any edge."""
         
         all_nodes = pd.concat(objs=[
@@ -129,6 +130,12 @@ class Streets:
         ], axis=0).unique()
 
         self.nodes = self.nodes[self.nodes.index.isin(all_nodes)]
+
+    def drop_disconnected(self, disconnected_nodes: List[int], disconnected_edges: List[int]):
+        """Drop all disconnected edges and nodes that are not part of the main network."""
+
+        self.nodes = self.nodes[~self.nodes.index.isin(disconnected_nodes)]
+        self.edges = self.edges[~self.edges.index.isin(disconnected_edges)]
 
     def add_areas(self, polygons: Dict[str, list]) -> None:
         """Iterates through all nodes, to check within which area they are lying.

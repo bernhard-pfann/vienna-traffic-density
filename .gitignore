@@ -1,2 +1,4 @@
 __pychache__/
 src/__pychache__/
+*.pyc
+artifacts/input/vienna-statistical_areas-2020-1-All-DatesByHourBucketsAggregate.csv
