@@ -23,7 +23,6 @@ def main():
         print("Simulated paths written to {}".format(conf.root_output))
     
     elif mode == "optimize":
-
         coefs = optimizer()
         coefs.to_csv(conf.output_paths["coefs"], sep=",", index=True)
         print("Coefficients optimized.")

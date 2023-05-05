@@ -11,8 +11,8 @@ import params.config as conf
 def train_test():
     """Comment this."""
 
-    X = pd.read_csv(os.path.join(conf.root_output, "X.csv"))
-    y = pd.read_csv(os.path.join(conf.root_output, "y.csv")).squeeze()
+    X = pd.read_csv(os.path.join(conf.root_output, "csv", "X.csv"))
+    y = pd.read_csv(os.path.join(conf.root_output, "csv", "y.csv")).squeeze()
 
     # Drop areas that are outside of borders of Vienna
     X.drop(columns=conf.outer_areas, errors="ignore", inplace=True)
